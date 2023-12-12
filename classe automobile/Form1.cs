@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static classe_automobile.Form1;
 
 namespace classe_automobile
 {
     public partial class Form1 : Form
     {
+        public class auto
+        {
+            public int velo { get; set; }
+
+        }
+        auto Auto = new auto();
         public Form1()
         {
             InitializeComponent();
@@ -20,20 +27,29 @@ namespace classe_automobile
         {
 
         }
-
+        bool acce = false;
         private void accendi_Click(object sender, EventArgs e)
         {
             MessageBox.Show("La macchina è accesa");
-            Show();
+            acce = true;
         }
         private void spegni_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("La macchina è spenta");
+            acce = false;
         }
 
         private void acelera_Click(object sender, EventArgs e)
         {
-
+            if (acce == true)
+            {
+                Auto.velo += 5;
+                velocità.Text = Auto.velo.ToString();
+            }
+            else
+            {
+                MessageBox.Show("La macchina è spenta, per usare i pedali bisogna accenderla");
+            }
         }
 
         private void freno_Click(object sender, EventArgs e)

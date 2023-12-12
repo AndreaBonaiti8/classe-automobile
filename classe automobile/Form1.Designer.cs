@@ -35,6 +35,8 @@
             this.marciagiù = new System.Windows.Forms.Button();
             this.retromarcia = new System.Windows.Forms.Button();
             this.spegni = new System.Windows.Forms.Button();
+            this.velocità = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // accendi
@@ -107,11 +109,29 @@
             this.spegni.UseVisualStyleBackColor = true;
             this.spegni.Click += new System.EventHandler(this.spegni_Click);
             // 
+            // velocità
+            // 
+            this.velocità.Location = new System.Drawing.Point(228, 128);
+            this.velocità.Name = "velocità";
+            this.velocità.Size = new System.Drawing.Size(170, 20);
+            this.velocità.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(225, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "velocità:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.velocità);
             this.Controls.Add(this.spegni);
             this.Controls.Add(this.retromarcia);
             this.Controls.Add(this.marciagiù);
@@ -123,6 +143,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -135,6 +156,8 @@
         private System.Windows.Forms.Button marciagiù;
         private System.Windows.Forms.Button retromarcia;
         private System.Windows.Forms.Button spegni;
+        private System.Windows.Forms.TextBox velocità;
+        private System.Windows.Forms.Label label1;
     }
 }
 
