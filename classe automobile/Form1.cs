@@ -36,8 +36,16 @@ namespace classe_automobile
         }
         private void spegni_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("La macchina è spenta");
-            acce = false;
+           if (Auto.velo == 0 && Auto.Marcia == 1)
+           {
+                MessageBox.Show("La macchina è spenta");
+                acce = false;
+           }
+           else
+           {
+                MessageBox.Show("La velocità deve essere 0 e deve essere inserita la prima marcia");
+           }
+           
         }
 
         private void acelera_Click(object sender, EventArgs e)
@@ -46,6 +54,10 @@ namespace classe_automobile
             {
                 Auto.velo += 5;
                 velocità.Text = Auto.velo.ToString();
+                if (Auto.velo > 20)
+                {
+                    MessageBox.Show("Devi cambiare marcia");
+                }
             }
             else
             {
@@ -59,6 +71,10 @@ namespace classe_automobile
             {
                 Auto.velo -= 5;
                 velocità.Text = Auto.velo.ToString();
+                if (Auto.velo < 20)
+                {
+                    MessageBox.Show("Devi cambiare marcia");
+                }
             }
             else
             {
@@ -70,6 +86,7 @@ namespace classe_automobile
         {
             if (Auto.Marcia < 7)
             {
+
                 Auto.Marcia++;
                 marcia.Text = Auto.Marcia.ToString();
             }
