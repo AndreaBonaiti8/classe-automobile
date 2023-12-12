@@ -16,6 +16,7 @@ namespace classe_automobile
         public class auto
         {
             public int velo { get; set; }
+            public int Marcia { get; set; }
 
         }
         auto Auto = new auto();
@@ -54,22 +55,56 @@ namespace classe_automobile
 
         private void freno_Click(object sender, EventArgs e)
         {
-
+            if (acce == true)
+            {
+                Auto.velo -= 5;
+                velocità.Text = Auto.velo.ToString();
+            }
+            else
+            {
+                MessageBox.Show("La macchina è spenta, per usare i pedali bisogna accenderla");
+            }
         }
 
         private void marciasu_Click(object sender, EventArgs e)
         {
-
+            if (Auto.Marcia < 7)
+            {
+                Auto.Marcia++;
+                marcia.Text = Auto.Marcia.ToString();
+            }
         }
 
         private void marciagiù_Click(object sender, EventArgs e)
         {
-
+            if (Auto.Marcia == 1)
+            {
+                marcia.Text = "R";
+                Auto.Marcia--;
+            }
+            else if (Auto.Marcia != 0)
+            {
+                Auto.Marcia--;
+                marcia.Text = Auto.Marcia.ToString();
+            }
         }
 
         private void retromarcia_Click(object sender, EventArgs e)
         {
-
+            if (Auto.Marcia == 1)
+            {
+                marcia.Text = "N";
+                Auto.Marcia--;
+            }
+            else if (Auto.Marcia != 0)
+            {
+                Auto.Marcia--;
+                marcia.Text = Auto.Marcia.ToString();
+            }
+            else if (marcia.Text == "N")
+            {
+                marcia.Text = "R";
+            }  
         }
     }
 }

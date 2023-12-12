@@ -33,10 +33,11 @@
             this.freno = new System.Windows.Forms.Button();
             this.marciasu = new System.Windows.Forms.Button();
             this.marciagiù = new System.Windows.Forms.Button();
-            this.retromarcia = new System.Windows.Forms.Button();
             this.spegni = new System.Windows.Forms.Button();
             this.velocità = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.marcia = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // accendi
@@ -89,16 +90,6 @@
             this.marciagiù.UseVisualStyleBackColor = true;
             this.marciagiù.Click += new System.EventHandler(this.marciagiù_Click);
             // 
-            // retromarcia
-            // 
-            this.retromarcia.Location = new System.Drawing.Point(22, 282);
-            this.retromarcia.Name = "retromarcia";
-            this.retromarcia.Size = new System.Drawing.Size(129, 50);
-            this.retromarcia.TabIndex = 5;
-            this.retromarcia.Text = "retromarcia";
-            this.retromarcia.UseVisualStyleBackColor = true;
-            this.retromarcia.Click += new System.EventHandler(this.retromarcia_Click);
-            // 
             // spegni
             // 
             this.spegni.Location = new System.Drawing.Point(193, 30);
@@ -125,15 +116,32 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "velocità:";
             // 
+            // marcia
+            // 
+            this.marcia.Location = new System.Drawing.Point(22, 326);
+            this.marcia.Name = "marcia";
+            this.marcia.Size = new System.Drawing.Size(170, 20);
+            this.marcia.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 310);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "marcia:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.marcia);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.velocità);
             this.Controls.Add(this.spegni);
-            this.Controls.Add(this.retromarcia);
             this.Controls.Add(this.marciagiù);
             this.Controls.Add(this.marciasu);
             this.Controls.Add(this.freno);
@@ -154,10 +162,11 @@
         private System.Windows.Forms.Button freno;
         private System.Windows.Forms.Button marciasu;
         private System.Windows.Forms.Button marciagiù;
-        private System.Windows.Forms.Button retromarcia;
         private System.Windows.Forms.Button spegni;
         private System.Windows.Forms.TextBox velocità;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox marcia;
+        private System.Windows.Forms.Label label2;
     }
 }
 
