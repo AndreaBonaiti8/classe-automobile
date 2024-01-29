@@ -8,16 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static classe_automobile.Form1;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace classe_automobile
 {
+    //Estendere la classe automobile dell'esercitazione precedente,
+    //aggiungendo gli attributi e  i metodi necessari o riscrivendo i metodi della super classe.
     public partial class Form1 : Form
     {
         public class auto
         {
             public int velo { get; set; }
             public int Marcia { get; set; }
-
+            public override string ToString()
+            {
+                return Marcia.ToString();
+            }
         }
         auto Auto = new auto();
         public Form1()
@@ -53,10 +59,38 @@ namespace classe_automobile
             if (acce == true)
             {
                 Auto.velo += 5;
+                Auto.Marcia = 1;
                 velocità.Text = Auto.velo.ToString();
-                if (Auto.velo > 20)
+                marcia.Text = Auto.Marcia.ToString();
+                if (Auto.velo > 20 && Auto.Marcia == 1)
                 {
-                    MessageBox.Show("Devi cambiare marcia");
+                    Auto.Marcia++;
+                    marcia.Text = Auto.Marcia.ToString();
+                }
+                if (Auto.velo > 45 && Auto.Marcia == 2)
+                {
+                    Auto.Marcia++;
+                    marcia.Text = Auto.Marcia.ToString();
+                }
+                if (Auto.velo > 60 && Auto.Marcia == 3)
+                {
+                    Auto.Marcia++;
+                    marcia.Text = Auto.Marcia.ToString();
+                }
+                if (Auto.velo > 80 && Auto.Marcia == 4)
+                {
+                    Auto.Marcia++;
+                    marcia.Text = Auto.Marcia.ToString();
+                }
+                if (Auto.velo > 100 && Auto.Marcia == 5)
+                {
+                    Auto.Marcia++;
+                    marcia.Text = Auto.Marcia.ToString();
+                }
+                if (Auto.velo > 120 && Auto.Marcia == 5)
+                {
+                    Auto.Marcia++;
+                    marcia.Text = Auto.Marcia.ToString();
                 }
             }
             else
@@ -70,26 +104,82 @@ namespace classe_automobile
             if (acce == true)
             {
                 Auto.velo -= 5;
+                Auto.Marcia = Convert.ToInt32(marcia.Text);
+                marcia.Text = Auto.Marcia.ToString();
                 velocità.Text = Auto.velo.ToString();
-                if (Auto.velo < 20)
-                {
-                    MessageBox.Show("Devi cambiare marcia");
-                }
             }
             else
             {
                 MessageBox.Show("La macchina è spenta, per usare i pedali bisogna accenderla");
             }
+            if (Auto.velo == 0 && Auto.Marcia == 1)
+            {
+                marcia.Text = "R";
+            }
+            if (Auto.velo < 20 && Auto.Marcia == 2)
+            {
+                Auto.Marcia--;
+                marcia.Text = Auto.Marcia.ToString();
+            }
+            if (Auto.velo < 45 && Auto.Marcia == 3)
+            {
+                Auto.Marcia--;
+                marcia.Text = Auto.Marcia.ToString();
+            }
+            if (Auto.velo < 60 && Auto.Marcia == 4)
+            {
+                Auto.Marcia--;
+                marcia.Text = Auto.Marcia.ToString();
+            }
+            if (Auto.velo < 80 && Auto.Marcia == 5)
+            {
+                Auto.Marcia--;
+                marcia.Text = Auto.Marcia.ToString();
+            }
+            if (Auto.velo < 100 && Auto.Marcia == 6)
+            {
+                Auto.Marcia--;
+                marcia.Text = Auto.Marcia.ToString();
+            }
         }
 
         private void marciasu_Click(object sender, EventArgs e)
         {
-            if (Auto.Marcia < 7)
+            if (Auto.Marcia < 6)
             {
 
-                Auto.Marcia++;
-                marcia.Text = Auto.Marcia.ToString();
+                if (Auto.velo > 20 && Auto.Marcia == 1)
+                {
+                    Auto.Marcia++;
+                    marcia.Text = Auto.Marcia.ToString();
+                }
+                if (Auto.velo > 45 && Auto.Marcia == 2)
+                {
+                    Auto.Marcia++;
+                    marcia.Text = Auto.Marcia.ToString();
+                }
+                if (Auto.velo > 60 && Auto.Marcia == 3)
+                {
+                    Auto.Marcia++;
+                    marcia.Text = Auto.Marcia.ToString();
+                }
+                if (Auto.velo > 80 && Auto.Marcia == 4)
+                {
+                    Auto.Marcia++;
+                    marcia.Text = Auto.Marcia.ToString();
+                }
+                if (Auto.velo > 100 && Auto.Marcia == 5)
+                {
+                    Auto.Marcia++;
+                    marcia.Text = Auto.Marcia.ToString();
+                }
+                if (Auto.velo > 120 && Auto.Marcia == 6)
+                {
+                    Auto.Marcia++;
+                    marcia.Text = Auto.Marcia.ToString();
+                }
             }
+
         }
 
         private void marciagiù_Click(object sender, EventArgs e)
